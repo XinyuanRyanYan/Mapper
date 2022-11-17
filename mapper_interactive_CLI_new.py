@@ -179,10 +179,10 @@ def write_node_stats(graph, activations, ground_labels, pred_labels, intervals, 
 if __name__ == '__main__':
     # # load the dataset (point cloud)
     activation_path = './data'
-    filename = 'output_valset_mismatched.csv'
-    mapper_output_fname = 'output_valset_mismatched'
+    filename = 'output_valset_mismatched'
+    mapper_output_fname = filename
     mapper_output_dir = './graphData'
-    activations_pd = pd.read_csv(os.path.join(activation_path, filename))
+    activations_pd = pd.read_csv(os.path.join(activation_path, filename+'.csv'))
     # call the function to compute mapper graph
     intervals = 40
     overlap = 0.4
