@@ -27,7 +27,7 @@ def bic_centroid(X, c, assignments, BIC=True):
         if i not in set_assignments:
             empty_clusters.append(i)
 
-    assignments = np.asarray(assignments, dtype=np.int)
+    assignments = np.asarray(assignments, dtype=np.int_)
     for i in range(k):
         if i in empty_clusters:
             continue

@@ -179,7 +179,7 @@ def write_node_stats(graph, activations, ground_labels, pred_labels, intervals, 
 if __name__ == '__main__':
     # # load the dataset (point cloud)
     activation_path = './data'
-    filename = 'output_trainset_0.5w_sample'
+    filename = 'output_trainset_58792_sample'
     mapper_output_fname = filename
     mapper_output_dir = './graphData'
     activations_pd = pd.read_csv(os.path.join(activation_path, filename+'.csv'))
@@ -187,7 +187,7 @@ if __name__ == '__main__':
     intervals = 40
     overlap = 0.4
     eps = None
-    activations = np.array(activations_pd.iloc[:, 3:])
+    activations = np.array(activations_pd.iloc[:, 5:])
     # 'lable', 'predict', 'correct'
     categorical_cols = {'lable':activations_pd['lable'], 'predict':activations_pd['predict'], 'correct':activations_pd['correct']}
     mapper_graph = create_mapper_graph(activations, intervals, overlap,categorical_cols, mapper_output_dir, mapper_output_fname, eps=eps, verbose=0, is_enhanced_cover=True)
